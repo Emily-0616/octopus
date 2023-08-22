@@ -14,6 +14,10 @@ const enum Actions {
 
 async function executeActions(actions: Actions[]) {
   Logo.print();
+  console.log(`${chalk.greenBright("==>")} ${emoji.get("v")} ${chalk.greenBright
+    (
+      "Recommendation: Use GitKraken On-Premises Serverless Client Because It Never Connects with GitKraken.com, And Privacy Is Better Controlled With It!"
+    )}`);
   const patcher = new Patcher({
     asar: program.asar,
     dir: program.dir,
@@ -72,6 +76,8 @@ async function executeActions(actions: Actions[]) {
     }
   }
   console.log(`${chalk.green("==>")} ${emoji.get("ok_hand")} Patching done!`);
+  if (patcher.features.includes("serverless"))
+    patcher.patchDirWithServerlessChoices();
 }
 
 program
@@ -124,5 +130,6 @@ program
       });
     }
     await executeActions(actions);
+
   })
   .parse(process.argv);
