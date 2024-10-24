@@ -31,3 +31,9 @@ Temporary Items
 .apdisk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
+
+GitCracken/.yarn/cache/
+
+GitCracken/.yarn/
+
+GitCracken/.yarnrc.yml
